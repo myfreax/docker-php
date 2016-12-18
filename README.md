@@ -35,9 +35,7 @@
 
 git clone https://github.com/huangyanxiong01/docker-php.git
 
-cd docker-node.js
-
-yarn install
+cd docker-php
 
 docker-compose up -d
 ```
