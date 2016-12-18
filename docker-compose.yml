@@ -40,8 +40,10 @@ services:
   redis:
     image: redis
     hostname: ${REDIS_HOST}
+    command: redis-server ${REDIS_CONF}
     volumes:
-      - ./docker/redis/data:/dataz
+      - ./docker/redis/data:/data
+      - ./docker/redis/etc/redis.conf:${REDIS_CONF}
   mongo:
     image: mongo
     hostname: ${MONGO_HOST}
