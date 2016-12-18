@@ -1,0 +1,50 @@
+version: '2'
+services:
+  nginx:
+    image: openresty/openresty
+    hostname: nginx
+    ports:
+      - "3000:80"
+    env_file:
+      - ./docker/nginx/nginx.env
+      - ./.env
+    volumes:
+      - ./docker/nginx/logs/:/usr/local/openresty/nginx/logs
+      - ./docker/nginx/etc/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      - ./docker/nginx/etc/conf.d:/usr/local/openresty/nginx/conf/conf.d
+      - .:/code
+    depends_on:
+      - php
+  php:
+    image: php:7.1.0-fpm
+    hostname: ${PHP_HOST}
+    env_file:
+      - ./docker/php/php.env
+      - ./docker/mysql/mysql.env
+      - ./.env
+    volumes:
+      - .:/code
+      - ./docker/php/etc/php-fpm.conf:/usr/local/etc/php-fpm.conf
+    working_dir: /code
+    depends_on:
+      - mysql
+      - mongo
+      - redis
+  mysql:
+    image: mysql
+    hostname: ${DB_HOST}
+      - ./docker/mysql/mysql.env
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./docker/mysql/etc:/etc/mysql/conf.d
+  redis:
+    image: redis
+    hostname: ${REDIS_HOST}
+    volumes:
+      - ./docker/redis/data:/dataz
+  mongo:
+    image: mongo
+    hostname: ${MONGO_HOST}
+    volumes:
+      - ./docker/mongo/data:/data/db
+      - ./docker/mongo/etc/mongod.conf.orig:/etc/mongod.conf.orig
