@@ -15,7 +15,9 @@
 - [x] PHP 7.1 + PHP-FPM
 - [x] Nginx with LuaJit
 
-> If you use mongoDB, you need the mongoDB extension.Please read this article[PECl](http://www.myfreax.com/install-the-php-extension-with-pecl/)
+> If you use mongoDB, you need the mongoDB extension.Please read this post [PECl](http://www.myfreax.com/install-the-php-extension-with-pecl/)
+
+
 ## How to use it?
 
 >If live behind the [GFW](https://zh.wikipedia.org/zh-hans/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E) please read this post [Use Ali cloud](http://www.myfreax.com/use-aliyun-mirror-acceleration-on-docker/)
