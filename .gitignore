@@ -2,3 +2,4 @@
 docker/mongo/data/*
 docker/mysql/data/*
 docker/redis/data/*
+/vendor/
