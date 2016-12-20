@@ -1,0 +1,15 @@
+{
+    "name": "myfreax.com/docker-php",
+    "description": "Docker build php development environment",
+    "require": {
+        "catfan/medoo": "^1.1",
+        "mongodb/mongodb": "^1.1"
+    },
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Freax",
+            "email": "huangyanxiong2013@gmail.com"
+        }
+    ]
+}
