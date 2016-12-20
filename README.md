@@ -6,7 +6,6 @@
 
 - Customize the configuration file
 - Data is stored in the host
-- 
  
 ## Software Stack
 - [x] MongoDB
