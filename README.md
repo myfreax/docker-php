@@ -15,8 +15,6 @@
 - [x] PHP 7.1 + PHP-FPM
 - [x] Nginx with LuaJit
 
-> If you use mongoDB, you need the mongoDB extension.Please read this post [PECl](http://www.myfreax.com/install-the-php-extension-with-pecl/)
-
 
 ## How to use it?
 
