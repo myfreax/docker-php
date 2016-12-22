@@ -1,11 +1,19 @@
 # Getting Started
+
 **Table of contents:**
+
 1. [Getting Started](#getting-started)
+
 1. [Docker-compose](#docker-compose)
+
 1. [Configure PHP](#configure-php)
+
 1. [Configure Nginx](#configure-nginx)
+
 1. [Configure MySQL](#configure-mysql)
+
 1. [Configure Redis](#configure-redis)
+
 1. [Configure MongoDB](#configure-mongodb)
 
 ## Getting Started
