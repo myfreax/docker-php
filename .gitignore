@@ -1,5 +1,4 @@
 .idea/
-docker/mongo/data/*
-docker/mysql/data/*
-docker/redis/data/*
+docker/*/data/*
+docker/*/logs/*
 /vendor/
