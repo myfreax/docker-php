@@ -41,11 +41,9 @@
 #### Getting started
 
 ```bash
-
 git clone https://github.com/huangyanxiong01/docker-php.git
-
 cd docker-php
-
+composer install 
 docker-compose up -d
 ```
 Now,you can open http://127.0.0.1:3000/ in browser

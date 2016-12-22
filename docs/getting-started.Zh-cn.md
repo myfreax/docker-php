@@ -31,11 +31,12 @@
 #### Getting Started
 
 ```bash
-
 git clone https://github.com/huangyanxiong01/docker-php.git
 
 cd docker-php
 
+composer install
+ 
 docker-compose up -d
 ```
 现在你可以在浏览器中打开http://127.0.0.1:3000/ 
@@ -44,19 +45,18 @@ docker-compose up -d
 
 ## Docker-compose
 
-> 服务包含 nginx, redis, mongodb, mysql, php-fpm
  
 - docker-compose stop
 
->Stop  service
+>停止所有服务
        
 - docker-compose start
 
->start  service
+>启动所有服务
 
 - docker-compose restart
 
->restart service
+>重启所有服务
 
 - docker-compose restart mysql
 
