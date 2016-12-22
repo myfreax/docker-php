@@ -19,6 +19,11 @@
 - [x] PHP 7.1 + PHP-FPM
 - [x] Nginx with LuaJit
 
+## Docs
+
+[English](./docs/getting-started.md)
+[简体中文](./docs/getting-started.Zh-cn.md)
+
 
 ## How to use it?
 
