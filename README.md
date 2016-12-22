@@ -6,6 +6,11 @@
 
 - Customize the configuration file
 - Data is stored in the host
+- xdebug support
+- Contains commonly used php extensions
+- React/PHP support(Event-driven, non-blocking I/O with PHP.Similar Node.js)
+- swoole support
+
  
 ## Software Stack
 - [x] MongoDB
@@ -48,12 +53,19 @@ You can find the custom $software configuration file in `./docker/$software/etc/
 
 #### Data
 
-You can find the  $software data file in `./docker/$software/Data/`
+You can find the  $software data file in `./docker/$software/data/`
+
+#### Log
+
+You can find the  $software log file in `./docker/$software/logs/`
+
+#### More 
+
+Please read docs 
 
 ## TODO
-- [ ] Build a PHP image that contains all of the extensions
-- [ ] Write a php test program
-- [ ] Optimize the configuration file
+- [x] Build a PHP image that contains all of the extensions
+- [x] Write a php example
 - [ ] Write usage documentation
 - [ ] Test on Windows
 
