@@ -16,15 +16,21 @@ services:
     depends_on:
       - php
   php:
-    image: php:7.1.0-fpm
+    image: huangyanxiong2012/docker-php-image
     hostname: ${PHP_HOST}
+    ports:
+      - "8080:8080"
+    #command: php react.php
     env_file:
       - ./docker/php/php.env
       - ./docker/mysql/mysql.env
       - ./.env
     volumes:
       - .:/code
-      - ./docker/php/etc/php-fpm.conf:/usr/local/etc/php-fpm.conf
+      - ./docker/php/etc/php.ini:/etc/php/7.0/fpm/php.ini
+      - ./docker/php/etc/php-fpm.conf:/etc/php/7.0/fpm/php-fpm.conf
+      - ./docker/php/etc/php-fpm.d/www.conf:/etc/php/7.0/fpm/pool.d/www.conf
+      - ./docker/php/logs/:/var/log/php/
     working_dir: /code
     depends_on:
       - mysql
@@ -35,8 +41,9 @@ services:
     hostname: ${DB_HOST}
       - ./docker/mysql/mysql.env
     volumes:
-      - ./docker/mysql/data:/var/lib/mysql
-      - ./docker/mysql/etc:/etc/mysql/conf.d
+      - ./docker/mysql/data/:/var/lib/mysql/
+      - ./docker/mysql/logs/:/var/log/mysql/
+      - ./docker/mysql/etc/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
   redis:
     image: redis
     hostname: ${REDIS_HOST}
@@ -44,9 +51,11 @@ services:
     volumes:
       - ./docker/redis/data:/data
       - ./docker/redis/etc/redis.conf:${REDIS_CONF}
+      - ./docker/redis/logs/:/var/log/redis/
   mongo:
     image: mongo
     hostname: ${MONGO_HOST}
     volumes:
+      - ./docker/mongo/logs/:/var/log/mongodb/
       - ./docker/mongo/data:/data/db
       - ./docker/mongo/etc/mongod.conf.orig:/etc/mongod.conf.orig
