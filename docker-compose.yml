@@ -39,6 +39,7 @@ services:
   mysql:
     image: mysql
     hostname: ${DB_HOST}
+    env_file:
       - ./docker/mysql/mysql.env
     volumes:
       - ./docker/mysql/data/:/var/lib/mysql/
