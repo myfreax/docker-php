@@ -67,7 +67,8 @@ You can find the  $software log file in `./docker/$software/logs/`
 Please read [docs](./docs/getting-started.md) 
 
 ## TODO
-- [ ] Solve the problem of integrating PHP framework
+
+- [ ] Write a php script that integrates with the framework(Such as Laravel,Symfony)
 - [ ] Write usage documentation
 - [ ] Test on Windows
 
