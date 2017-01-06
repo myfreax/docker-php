@@ -13,6 +13,9 @@ services:
       - ./docker/nginx/etc/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
       - ./docker/nginx/etc/conf.d:/usr/local/openresty/nginx/conf/conf.d
       - .:/code
+    dns:
+      - ${BAIDUDNS}
+      - ${GOOGLEDNS}
     depends_on:
       - php
   php:
@@ -32,6 +35,9 @@ services:
       - ./docker/php/etc/php-fpm.d/www.conf:/etc/php/7.0/fpm/pool.d/www.conf
       - ./docker/php/logs/:/var/log/php/
     working_dir: /code
+    dns:
+      - ${BAIDUDNS}
+      - ${GOOGLEDNS}
     depends_on:
       - mysql
       - mongo
@@ -39,6 +45,9 @@ services:
   mysql:
     image: mysql
     hostname: ${DB_HOST}
+    dns:
+      - ${BAIDUDNS}
+      - ${GOOGLEDNS}
     env_file:
       - ./docker/mysql/mysql.env
     volumes:
@@ -49,6 +58,9 @@ services:
     image: redis
     hostname: ${REDIS_HOST}
     command: redis-server ${REDIS_CONF}
+    dns:
+      - ${BAIDUDNS}
+      - ${GOOGLEDNS}
     volumes:
       - ./docker/redis/data:/data
       - ./docker/redis/etc/redis.conf:${REDIS_CONF}
@@ -60,3 +72,6 @@ services:
       - ./docker/mongo/logs/:/var/log/mongodb/
       - ./docker/mongo/data:/data/db
       - ./docker/mongo/etc/mongod.conf.orig:/etc/mongod.conf.orig
+    dns:
+      - ${BAIDUDNS}
+      - ${GOOGLEDNS}
