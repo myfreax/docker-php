@@ -1,5 +1,9 @@
 # Change Log
 
+## 2016-1-7
+
+- Add Google and Baidu DNS
+
 ## 2016-12-22
 
 - map log to the host
