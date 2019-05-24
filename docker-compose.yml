@@ -43,7 +43,7 @@ services:
       - mongo
       - redis
   mysql:
-    image: mysql
+    image: mysql:5.7
     hostname: ${DB_HOST}
     dns:
       - ${BAIDUDNS}
