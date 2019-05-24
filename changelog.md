@@ -1,7 +1,9 @@
 # Change Log
 
 ## 2019-5-24
-- Fix get mongodb version error 
+- Fix get mongodb version error
+- Fix MySQL 8 unkown charset error
+- Remove mongodb/mongodb package
 
 ## 2016-1-7
 
