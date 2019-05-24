@@ -1,5 +1,8 @@
 # Change Log
 
+## 2019-5-24
+- Fix get mongodb version error 
+
 ## 2016-1-7
 
 - Add Google and Baidu DNS
