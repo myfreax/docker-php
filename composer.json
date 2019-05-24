@@ -3,7 +3,6 @@
     "description": "Docker build php development environment",
     "require": {
         "catfan/medoo": "^1.1",
-        "mongodb/mongodb": "^1.1",
         "react/react": "^0.4.2",
         "predis/predis": "^1.1"
     },
